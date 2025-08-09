@@ -27,8 +27,11 @@ public class Article {
     @Column(name = "content", nullable = false)
     private String content;
 
+    @Column(name = "author", nullable = false)
+    private String author;
+
     @CreatedDate
-    @Column(name="createdAt")
+    @Column(name="created_at")
     private LocalDateTime createdAt;
 
     @LastModifiedDate //수정 시간 저장
@@ -36,7 +39,8 @@ public class Article {
     private LocalDateTime updatedAt;
 
     @Builder
-    public Article(String title, String content){
+    public Article(String author, String title, String content){
+        this.author = author;
         this.title = title;
         this.content = content;
     }
