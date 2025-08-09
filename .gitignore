@@ -42,4 +42,6 @@ bin/
 .DS_Store
 
 # .gitignore
-src/main/resources/application.yml
+# 민감정보 환경 설정
+src/main/resources/application-oauth.yml
+

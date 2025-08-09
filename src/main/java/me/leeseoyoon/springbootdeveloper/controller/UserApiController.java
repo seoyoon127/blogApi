@@ -3,7 +3,7 @@ package me.leeseoyoon.springbootdeveloper.controller;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
-import me.leeseoyoon.springbootdeveloper.dto.AddUserfRequest;
+import me.leeseoyoon.springbootdeveloper.dto.AddUserRequest;
 import me.leeseoyoon.springbootdeveloper.service.UserService;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
@@ -18,7 +18,7 @@ public class UserApiController {
     private final UserService userService;
 
     @PostMapping("/user")
-    public String signup(AddUserfRequest request){
+    public String signup(AddUserRequest request){
         userService.save(request); //회원 가입 메서드 호출
         return "redirect:/login"; //회원 가입이 완료된 이후에 로그인 페이지로 이동
     }
